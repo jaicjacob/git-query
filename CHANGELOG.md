@@ -1,0 +1,15 @@
+# Change Log
+
+All notable changes to the "git-query" extension will be documented in this file.
+
+## [Unreleased]
+- Invoke runner operation for individual files to help during development
+- Generate CI status of a SCM for review
+- Reduce query time by smart analysis of repositories with the YML data
+
+## [0.0.1] - 2021/06/30
+
+### Added
+- Initial release with command git-query.runner
+- command git-query.runner to check for available runners and its status for the GIT instance
+- Includes feature to list all jobs in either pending, created or running state
