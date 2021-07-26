@@ -134,7 +134,10 @@ async function checkProjectStatus(projectID, runnerID) {
 
                         //console.log(job[j]);
                         if (
-                            job[j]['runner']['description'] == runnerID ||
+                            (
+                                job[j]['runner'] != null &&
+                                job[j]['runner']['description'] == runnerID
+                            ) ||
                             runnerID == 'All Jobs'
                         ) {
 
