@@ -9,8 +9,8 @@ Just click the install button next to the icon; ensure the **settings** are upda
 
 ```json
 {
-    "gitQuery.host": "https://diam-hmidev.kpit.com/",
-    "gitQuery.token": "S_DPsQLTE5MCRsf9HaBp"
+    "gitQuery.host": "https://change.me/",
+    "gitQuery.token": "XXXXXXXXXXXXXXXXXXXXX"
 }
 ```
 
