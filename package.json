@@ -3,7 +3,7 @@
 	"displayName": "Git Query",
 	"description": "Query the status of GIT resources",
     "icon": "media/ext-icon.png",
-	"version": "0.0.2",
+	"version": "0.0.3",
     "publisher": "JaicJacobPhilip",
 	"engines": {
 		"vscode": "^1.54.0"

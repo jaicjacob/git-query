@@ -4,10 +4,11 @@
 const fs = require('fs');
 const vscode = require('vscode');
 const gitlab = require('gitlab');
-const path = require('path');
+//const path = require('path');
+//const { endianness } = require('os');
 
-const GIT_QUERY_APP_DIR = process.env.APPDATA + "\\gitquery";
-const GIT_QUERY_APP_DATA = GIT_QUERY_APP_DIR + "\\query.json";
+//const GIT_QUERY_APP_DIR = process.env.APPDATA + "\\gitquery";
+//const GIT_QUERY_APP_DATA = GIT_QUERY_APP_DIR + "\\query.json";
 const GIT_QUERY_APP_TIMEOUT = 5000;
 
 /**
@@ -229,17 +230,17 @@ async function checkRunnerStatus(runnerID)
 \********************************************************************************/
 function activate(context) {
 
-	if(!fs.existsSync(GIT_QUERY_APP_DIR)) {
-        fs.mkdirSync(GIT_QUERY_APP_DIR, {
-            recursive: true
-        });
-    }
+	// if(!fs.existsSync(GIT_QUERY_APP_DIR)) {
+    //     fs.mkdirSync(GIT_QUERY_APP_DIR, {
+    //         recursive: true
+    //     });
+    // }
 
-    fs.writeFile(GIT_QUERY_APP_DATA, "", function(err) {
-        if(err) {
-            console.log(err);
-        }
-    })
+    // fs.writeFile(GIT_QUERY_APP_DATA, "", function(err) {
+    //     if(err) {
+    //         console.log(err);
+    //     }
+    // })
 
     let queryOutput = vscode.window.createOutputChannel("GIT QUERY");
     queryOutput.clear();
@@ -271,7 +272,7 @@ function activate(context) {
                 checkRunnerStatus(result)
                 .then(async runnerStatus => {
                     if (!undefined){
-                        exportToJsonFile(runnerStatus);
+                        //exportToJsonFile(runnerStatus);
 
                         if (runnerStatus.length > 0)
                         {
@@ -294,7 +295,7 @@ function activate(context) {
             });
         })
         .then(undefined, err => {
-            vscode.window.showErrorMessage('Cannot establish connection to the GIT server!');
+            vscode.window.showErrorMessage('Cannot establish connection to the GIT server! Error: ' + err.code);
         });
     });
 
